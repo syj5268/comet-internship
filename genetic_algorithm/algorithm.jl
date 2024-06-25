@@ -72,23 +72,11 @@ function ordered_crossover(parent1, parent2)
     
     # Fill in the rest of the cities for offspring1
     pos1 = mod1(point2 + 1, n)
-    for i in 1:n
-        city = parent2[mod1(point2 + i, n)]
-        if !(city in offspring1)
-            offspring1[pos1] = city
-            pos1 = mod1(pos1 + 1, n)
-        end
-    end
+    ###### Fill in the code here ######
 
     # Reset pos for offspring2 and fill in the rest of the cities
     pos2 = mod1(point2 + 1, n)
-    for i in 1:n
-        city = parent1[mod1(point2 + i, n)]
-        if !(city in offspring2)
-            offspring2[pos2] = city
-            pos2 = mod1(pos2 + 1, n)
-        end
-    end
+    ###### Fill in the code here ######
     
     return offspring1, offspring2
 end
@@ -96,12 +84,8 @@ end
 # Mutation
 function mutate!(tour::Vector, mutation_rate)
     n = length(tour)
-    for i in 1:n
-        if rand() < mutation_rate
-            j = rand(1:n)
-            tour[i], tour[j] = tour[j], tour[i]
-        end
-    end
+    ###### Fill in the code here ######
+    
     return tour
 end
 
