@@ -9,7 +9,7 @@ function two_opt(X, Y, adj, n, tour)
         improved = false
 
         # Find best swap
-        swap_info = Dict()
+        swap_info = Dict{Tuple{Int,Int},Float64}()
         for i in 1:n
             for j in i+1:n
                 cur_length = adj[tour[i], tour[i+1]]  + adj[tour[j], tour[mod1(j+1, n)]]
@@ -99,9 +99,9 @@ function genetic_algorithm_with_2opt(X, Y, adj, opt_len, n; population_size=100,
     end
     
     for gen in 1:generations
-        new_population = []
-        new_scores = []
-        
+        new_population = Vector{Int}[]
+        new_scores = Float64[]
+
         while length(new_population) < population_size
             # Selection
             parent1, parent2 = select_two_parents(population, scores, tournament_size)
