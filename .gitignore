@@ -1,1 +1,3 @@
-dynamic_programming/*.jl
+genectic_algorithm/*_ga.jl
+
+dynamic_programming/*_dp.jl
